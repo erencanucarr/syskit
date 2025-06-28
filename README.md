@@ -2,8 +2,6 @@
 
 A fully-localized, modular system-management CLI for **Linux** written in Go. Syskit replaces a handful of classic Unix tools with one cohesive, themeable, multi-language interface.
 
-![Syskit Pulse](docs/assets/pulse_demo.png)
-
 ---
 
 ## Table of Contents
@@ -40,7 +38,7 @@ A fully-localized, modular system-management CLI for **Linux** written in Go. Sy
 
 ```bash
 # Clone & build
-$ git clone https://github.com/<you>/syskit.git && cd syskit
+$ git clone https://github.com/erencanucarr/syskit.git && cd syskit
 $ go install ./...
 
 # Verify installation
