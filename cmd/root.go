@@ -11,6 +11,7 @@ import (
 	"syskit/internal/config"
 	"syskit/internal/i18n"
 	"syskit/internal/utils"
+	"github.com/charmbracelet/lipgloss"
 )
 
 var (
@@ -62,6 +63,39 @@ func Execute() {
 }
 
 func init() {
+	// custom colorful help output
+	headerStyle := lipgloss.NewStyle().Bold(true).Foreground(lipgloss.Color("205"))
+	cmdStyle := lipgloss.NewStyle().Foreground(lipgloss.Color("69"))
+	sectionStyle := lipgloss.NewStyle().Bold(true)
+
+	rootCmd.SetHelpFunc(func(cmd *cobra.Command, args []string) {
+		fmt.Println(headerStyle.Render(cmd.CommandPath() + " - " + cmd.Short))
+		if cmd.Long != "" {
+			fmt.Println(cmd.Long)
+		}
+
+		if len(cmd.Commands()) > 0 {
+			fmt.Println()
+			fmt.Println(sectionStyle.Render("Commands"))
+			for _, c := range cmd.Commands() {
+				if !c.IsAvailableCommand() || c.Hidden {
+					continue
+				}
+				fmt.Printf("  %s  %s\n", cmdStyle.Render(c.Name()), c.Short)
+			}
+		}
+
+		if cmd.HasAvailableLocalFlags() {
+			fmt.Println()
+			fmt.Println(sectionStyle.Render("Flags"))
+			fmt.Print(cmd.LocalFlags().FlagUsagesWrapped(90))
+		}
+		if cmd.HasAvailableInheritedFlags() {
+			fmt.Println()
+			fmt.Println(sectionStyle.Render("Global Flags"))
+			fmt.Print(cmd.InheritedFlags().FlagUsagesWrapped(90))
+		}
+	})
 	cobra.OnInitialize()
 
 	rootCmd.PersistentFlags().StringVarP(&outputFormat, "output", "o", "table", "output format: table|json|yaml")
