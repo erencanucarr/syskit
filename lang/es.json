@@ -29,4 +29,14 @@
   "Proceed with deletion? [y/N]:": "¿Continuar con la eliminación? [s/N]:",
   "no_suspicious": "No se encontraron procesos sospechosos",
   "sysclean_help": "Limpia directorios temporales (/tmp), cachés de paquetes (apt, yum, dnf) y archivos de log rotados.\n\nOpciones:\n  --dry-run  Muestra lo que se eliminaría sin borrar nada.\n  --force    Elimina sin confirmación.\n  --auto     Modo no interactivo, adecuado para cron."
+,
+"navigate": "Navegar",
+"kill": "Terminar",
+"search": "Buscar",
+"process_killed": "Proceso %s terminado",
+"failed_to_kill": "No se pudo terminar el proceso: %s",
+"help": "Ayuda",
+"commands": "Comandos",
+"flags": "Flags",
+"global_flags": "Flags Globales"
 }

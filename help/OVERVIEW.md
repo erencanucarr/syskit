@@ -171,4 +171,34 @@ The dashboard is Linux-specific; other OSes fall back to the stub. This is why t
 
 ## Tests
 Currently only unit-style integration tests around utils; more welcome!
+---
+## 9. Custom Actions (Automated Actions on Process Events)
+
+Syskit Pulse dashboard supports "Custom Actions"—automated responses to process events based on user-defined rules. This allows you to automatically trigger shell commands or scripts when certain conditions are met (e.g., a process exceeds a CPU or memory threshold).
+
+**How it works:**
+- Custom actions are defined as a list of rules in the code (future versions may support external config).
+- Each rule specifies:
+  - Process name (or "*" for any process)
+  - CPU threshold (e.g., 90%)
+  - The shell command to execute (e.g., `kill -9 {pid}`)
+- On every dashboard refresh (tick), all running processes are checked against these rules.
+- If a rule matches (e.g., "python" process >90% CPU), the specified command is executed automatically.
+
+**Example (in code):**
+```go
+CustomAction{
+  Name:      "Kill High CPU Python",
+  Process:   "python",
+  CPUThresh: 90.0,
+  Action:    "kill -9 {pid}",
+  Triggered: false,
+}
+```
+
+**Planned:**  
+In future releases, custom actions will be configurable via a JSON file (e.g., `~/.syskit_pulse_actions.json`).
+
+**Usage:**  
+Just run `syskit pulse` and the dashboard will automatically apply any defined custom actions in the background.
 

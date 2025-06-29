@@ -28,5 +28,14 @@
   "Top processes": "En çok bellek kullanan 5 işlem",
   "Proceed with deletion? [y/N]:": "Silme işlemine devam edilsin mi? [e/H]:",
   "no_suspicious": "Şüpheli işlem bulunamadı",
-  "sysclean_help": "Geçici dizinleri (/tmp), paket önbelleklerini (apt, yum, dnf) ve döndürülmüş log dosyalarını temizler.\n\nSeçenekler:\n  --dry-run  Silmeden önce nelerin temizleneceğini gösterir.\n  --force    Onay sormadan siler.\n  --auto     Cron işleri için uygundur, etkileşimsiz çalışır."
+  "sysclean_help": "Geçici dizinleri (/tmp), paket önbelleklerini (apt, yum, dnf) ve döndürülmüş log dosyalarını temizler.\n\nSeçenekler:\n  --dry-run  Silmeden önce nelerin temizleneceğini gösterir.\n  --force    Onay sormadan siler.\n  --auto     Cron işleri için uygundur, etkileşimsiz çalışır.",
+  "navigate": "Gezin",
+  "kill": "Öldür",
+  "search": "Ara",
+  "process_killed": "İşlem %s öldürüldü",
+  "failed_to_kill": "İşlem öldürülemedi: %s",
+  "help": "Yardım",
+  "commands": "Komutlar",
+  "flags": "Bayraklar",
+  "global_flags": "Global Bayraklar"
 }

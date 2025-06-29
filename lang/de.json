@@ -28,5 +28,14 @@
   "Top processes": "Top 5 Prozesse nach Speicherverbrauch",
   "Proceed with deletion? [y/N]:": "Mit dem Löschen fortfahren? [j/N]:",
   "no_suspicious": "Keine verdächtigen Prozesse gefunden",
-  "sysclean_help": "Bereinigt temporäre Verzeichnisse (/tmp), Paket-Caches (apt, yum, dnf) und rotierte Logdateien.\n\nOptionen:\n  --dry-run  Zeigt an, was gelöscht würde, ohne zu entfernen.\n  --force    Löscht ohne Rückfrage.\n  --auto     Nicht-interaktiver Modus, geeignet für Cron-Jobs."
+  "sysclean_help": "Bereinigt temporäre Verzeichnisse (/tmp), Paket-Caches (apt, yum, dnf) und rotierte Logdateien.\n\nOptionen:\n  --dry-run  Zeigt an, was gelöscht würde, ohne zu entfernen.\n  --force    Löscht ohne Rückfrage.\n  --auto     Nicht-interaktiver Modus, geeignet für Cron-Jobs.",
+"navigate": "Navigieren",
+"kill": "Beenden",
+"search": "Suchen",
+"process_killed": "Prozess %s beendet",
+"failed_to_kill": "Prozess konnte nicht beendet werden: %s",
+"help": "Hilfe",
+"commands": "Befehle",
+"flags": "Flags",
+"global_flags": "Globale Flags"
 }

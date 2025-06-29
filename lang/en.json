@@ -29,4 +29,14 @@
   "Proceed with deletion? [y/N]:": "Proceed with deletion? [y/N]:",
   "no_suspicious": "No suspicious processes found",
   "sysclean_help": "Clean temporary directories (/tmp), package caches (apt, yum, dnf) and rotated log files.\n\nOptions:\n  --dry-run  Show what would be removed without deleting.\n  --force    Delete without confirmation.\n  --auto     Non-interactive mode, suitable for cron jobs."
+,
+"navigate": "Navigate",
+"kill": "Kill",
+"search": "Search",
+"process_killed": "Process %s killed",
+"failed_to_kill": "Failed to kill process: %s",
+"help": "Help",
+"commands": "Commands",
+"flags": "Flags",
+"global_flags": "Global Flags"
 }

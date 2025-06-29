@@ -27,4 +27,14 @@
   "cron_added": "<translate 'Cron job added'>",
   "no_data": "<translate 'No data'>",
   "sysclean_help": "<translate the help string for sysclean command>"
+,
+"navigate": "<translate 'Navigate'>",
+"kill": "<translate 'Kill'>",
+"search": "<translate 'Search'>",
+"process_killed": "<translate 'Process %s killed'>",
+"failed_to_kill": "<translate 'Failed to kill process: %s'>",
+"help": "<translate 'Help'>",
+"commands": "<translate 'Commands'>",
+"flags": "<translate 'Flags'>",
+"global_flags": "<translate 'Global Flags'>"
 }
