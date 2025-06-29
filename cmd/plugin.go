@@ -13,6 +13,25 @@ import (
 var pluginCmd = &cobra.Command{
     Use:   "plugin",
     Short: "Manage syskit plugins",
+    Long: `Plugins are standalone executables placed under $(HOME)/.syskit/plugins.
+They are invoked automatically when you run:  syskit <plugin-name> [args...]
+The CLI searches the plugin directory first and, if an executable with the given
+name exists, it is executed instead of a built-in command.
+
+Writing a plugin is trivial – any language that can write to STDOUT works.
+A simple Bash example (save as hello, chmod +x):
+
+  #!/usr/bin/env bash
+  echo "Hello from Syskit plugin!"
+
+A Go example:
+
+  package main
+  import "fmt"
+  func main(){ fmt.Println("Hello from Syskit plugin") }
+
+Plugins receive CLI arguments unchanged and should print their own help when
+called with -h or --help.`,
 }
 
 var pluginListCmd = &cobra.Command{
@@ -77,7 +96,31 @@ func copyFile(src, dst string) error {
     return nil
 }
 
+var pluginCreateCmd = &cobra.Command{
+    Use:   "create [name]",
+    Short: "Scaffold a Go plugin in current directory",
+    Args:  cobra.ExactArgs(1),
+    RunE: func(cmd *cobra.Command, args []string) error {
+        name := args[0]
+        file := name + ".go"
+        if _, err := os.Stat(file); err == nil {
+            return fmt.Errorf("%s already exists", file)
+        }
+        tpl := fmt.Sprintf(`package main
+
+import "fmt"
+
+// %s plugin – replace with your logic.
+func main() {
+    fmt.Println("Hello from %s plugin!")
+}
+`, name, name)
+        return os.WriteFile(file, []byte(tpl), 0o644)
+    },
+}
+
 func init() {
     pluginCmd.AddCommand(pluginListCmd)
     pluginCmd.AddCommand(pluginInstallCmd)
+    pluginCmd.AddCommand(pluginCreateCmd)
 }
