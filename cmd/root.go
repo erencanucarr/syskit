@@ -75,12 +75,13 @@ func init() {
 	rootCmd.AddCommand(syscleanCmd)
 	rootCmd.AddCommand(pluginCmd)
 	rootCmd.AddCommand(infoCmd)
-	rootCmd.AddCommand(healthCmd)
 	rootCmd.AddCommand(scheduleCmd)
 	rootCmd.AddCommand(processWatchCmd)
 	rootCmd.AddCommand(timelineCmd)
 	rootCmd.AddCommand(watchdogCmd)
 	rootCmd.AddCommand(pulseCmd)
+	rootCmd.AddCommand(servicesCmd)
+	rootCmd.AddCommand(containersCmd)
 }
 
 // tryPlugin executes plugin binary if present under pluginDir.
