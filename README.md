@@ -1,4 +1,4 @@
-# Syskit
+![syskit](https://github.com/user-attachments/assets/d58250a4-ca28-4260-9032-2263a75d4ffb)
 
 A fully-localized, modular system-management CLI for **Linux** written in Go. Syskit replaces a handful of classic Unix tools with one cohesive, themeable, multi-language interface.
 
